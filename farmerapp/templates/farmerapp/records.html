@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+{% block title %}
+Triggers
+{% endblock title %}
+
+
+
+{% block content %}
+ <h3 class="text-center"><span>Farmers Triggers Records</span> </h3>
+  
+
+
+<div class="alert alert-{{category}} alert-dismissible fade show" role="alert">
+    {{message}}
+
+
+</div>
+  
+<br>
+
+<div class="container mt-4">
+<table class="table">
+  <thead class="thead-light">
+    <tr>
+   
+      <th scope="col">FARMER ID</th>
+      <th scope="col">ACTION</th>
+      <th scope="col">TIMESTAMP</th>
+
+
+    </tr>
+  </thead>
+  <tbody>
+  {% for post in query %}
+    <tr>
+      
+      <td>{{post.fid}}</td>
+      <td>{{post.action}}</td>
+      <td>{{post.timestamp}}</td>
+     
+  
+    </tr>
+{% endfor %}
+  
+  </tbody>
+</table>
+</div>
+
+
+
+{% endblock %}
